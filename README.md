@@ -8,5 +8,8 @@ The game starts with both players making their choices in secret, and then the c
 
 The JavaScript code for this game would involve user interface elements to allow each player to make their choice and logic to determine the winner based on the rules mentioned above. You can also add a score system to keep track of the number of rounds won by each player.
 coded with html css javascript...
+
 screenshot:
+
+
 ![image](https://github.com/mohss3n/Rock-paper-scissors-game-/assets/117023341/71b2d741-8c6c-4927-8a0e-5cabdd2bc877)
