@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock paper scissors game</title>
+    <style>
+body{
+    background-color: rgb(140, 212, 240);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+#fieldx{
+    background-color: rgb(204, 199, 199);
+    border: solid 2px rgb(49, 48, 48);
+    border-radius: 20px;
+    height: 300px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+#choices{
+    position: relative;
+     display: flex;
+     margin-top: 2%;
+    flex-direction: row;
+    justify-content: center;
+ }
+img{
+    display: inline;
+    margin: 2rem;
+    width: 100px;
+    height: 100px;
+}
+h1{
+    color: red;
+    font-size: 80px;
+    font-weight: 5500;
+}
+#title,footer{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <h1 id="title">Rock paper scissors game</h1>
+    <div class="container">
+    <div id="fieldx">
+        <h1>Start !</h1>
+   </div>
+    <div id="choices">
+        <img src="cut3.png" alt="" id="cut" value=1>
+        <img src="paper2.png" alt="" id="paper" value=2>
+        <img src="rock1.png" alt="" id="rock" value=3>
+    </div>
+</div>
+
+<footer>
+     <h3>By Mohssen Haddad </h3> #<a href="https://github.com/mohss3n?tab=repositories">mohss3n</a># 
+</footer>
+
+<script>
+    var cut=document.getElementById('cut')
+    var paper=document.getElementById('paper')
+    var rock=document.getElementById('rock')
+
+    var cutid=document.getElementById('cut').id
+    var paperid=document.getElementById('paper').id
+    var rockid=document.getElementById('rock').id
+
+  
+
+    field=[]
+    field2=[]
+
+    pl1=[]
+    pl2=[]
+
+p1()
+
+function p1() {
+    cut.addEventListener('click', () => {
+        field.push(cutid);
+        p2();
+    });
+
+    paper.addEventListener('click', () => {
+        field.push(paperid);
+        p2();
+    });
+
+    rock.addEventListener('click', () => {
+        field.push(rockid);
+        p2();
+    });
+}
+
+function p2() {
+    console.log(field2 + "   p2 on");
+
+    fieldd = document.getElementById('fieldx');
+    fieldd.innerHTML = '<h1>Player Two Turn !</h1>';
+
+    cut.addEventListener('click', () => {
+        field2.push(cutid);
+        play();
+    });
+
+    paper.addEventListener('click', () => {
+        field2.push(paperid);
+        play();
+    });
+
+    rock.addEventListener('click', () => {
+        field2.push(rockid);
+        play();
+    });
+}
+
+function play() {
+    console.log(field + '-' + field2 + " arrays");
+
+    for (var i = 0, k = 0; i < field.length && k < field2.length; i++, k++) {
+        var player1Choice = field[0];
+        var player2Choice = field2[0];
+
+        if (player1Choice == "cut" && player2Choice == "paper" ||  player1Choice=="paper" && player2Choice=="rock" ||  player1Choice=="rock" && player2Choice=="cut") {
+            console.log('ok');
+            // If Player One wins, update the HTML content
+            fieldd = document.getElementById('fieldx');
+            fieldd.innerHTML = '<h1>Player One Wins !</h1>';
+        } else {
+            fieldd = document.getElementById('fieldx');
+            fieldd.innerHTML = '<h1>Player Two Wins !</h1>';        }
+    }
+
+    console.log('done'); //
+}
+
+</script>
+</body>
+</html>
