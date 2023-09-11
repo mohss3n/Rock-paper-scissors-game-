@@ -1,4 +1,6 @@
 "# Rock-paper-scissors-game-" 
+
+
  paper-scissors-rock game is a simple two-player game where each player selects one of three options: paper, scissors, or rock. The game is typically played as follows:
 
 Paper covers Rock: Paper beats Rock.
